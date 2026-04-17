@@ -8,26 +8,27 @@ Use this checklist when filling Google Play Console.
 2. Copy public URL.
 3. In Play Console: `App content` -> `Privacy policy` -> paste URL.
 
-## 2) Data Safety Form (Current MixMate Behavior)
+## 2) Data Safety Form (Current MixMate Behavior with Ads Enabled)
 
 Play Console: `App content` -> `Data safety`
 
-- Does your app collect or share any user data? -> **No**
-- Is all app data processed only on device? -> **Yes**
-- Is data encrypted in transit? -> **Not applicable (no transmitted data)**
-- Can users request data deletion? -> **Not applicable (no server-side account data)**
+- Does your app collect or share any user data? -> **Yes** (through ad SDK behavior)
+- Data collected (typical ad stack): -> **Device or other IDs**, **App interactions**, optionally **Approximate location**
+- Is data shared with third parties? -> **Yes** (ad partners)
+- Is all app data processed only on device? -> **No**
+- Is data encrypted in transit? -> **Yes** (as provided by ad SDK/network transport)
+- Can users request data deletion? -> **Not applicable for local-only app data; third-party ad data governed by provider controls**
 
 ## 3) Internal Reality Check (must stay true)
 
-Current policy assumes all below are true:
+Current policy now assumes:
 
 - No login/account
-- No analytics SDK
-- No ads SDK
+- Ads SDK may be present
 - No remote API storing user data
 - Favorites/history/preferences are local-only
 
-If you later add ads, analytics, sign-in, or cloud sync, update both:
+If you later add analytics, sign-in, cloud sync, or additional SDKs, update both:
 
 1. `docs/PRIVACY_POLICY.md`
 2. Play Console Data Safety answers

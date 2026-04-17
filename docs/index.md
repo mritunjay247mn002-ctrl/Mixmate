@@ -65,12 +65,3 @@ For privacy-related questions, contact:
 
 - **App name:** MixMate
 - **Contact email:** `agonlabwork@gmail.com`
-
----
-
-### Google Play Data Safety Summary (Current)
-
-- Data collected: **Yes** (via advertising SDKs, when enabled)
-- Data shared: **Yes** (with ad partners, as needed for ads)
-- Data processed off-device: **Yes** (for ad delivery and measurement)
-- Core recipe and preference features remain local-first: **Yes**
