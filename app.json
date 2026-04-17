@@ -5,7 +5,6 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
     "splash": {
       "resizeMode": "contain",
       "backgroundColor": "#0F0A1E"
@@ -15,11 +14,15 @@
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#0F0A1E"
-      }
+      },
+      "runtimeVersion": "1.0.0"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mixmate.app"
+      "bundleIdentifier": "com.mixmate.app",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "plugins": [
       "expo-router",
@@ -28,6 +31,16 @@
     "scheme": "mixmate",
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "76f98d2b-9433-4aef-bdb7-4fa2c81f8d65"
+      }
+    },
+    "owner": "mritunjay-debug",
+    "updates": {
+      "url": "https://u.expo.dev/76f98d2b-9433-4aef-bdb7-4fa2c81f8d65"
     }
   }
 }

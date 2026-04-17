@@ -15,7 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import type {
   BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
-import { FS, RAD } from '../utils/theme';
+import { FS, RAD } from '../../src/utils/theme';
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 

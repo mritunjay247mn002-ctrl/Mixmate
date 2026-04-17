@@ -1,1 +1,1 @@
-export { default } from '../screens/FavoritesScreen';
+export { default } from '../../src/screens/FavoritesScreen';

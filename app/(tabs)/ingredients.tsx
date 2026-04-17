@@ -1,1 +1,1 @@
-export { default } from '../screens/IngredientsScreen';
+export { default } from '../../src/screens/IngredientsScreen';

@@ -26,11 +26,15 @@ import Animated, {
   FadeInRight,
 } from 'react-native-reanimated';
 
-import { FS, SP, RAD, gradFor } from '../utils/theme';
-import { getDrinkById } from '../hooks/useDrinks';
-import { useFavorites } from '../hooks/useFavorites';
-import { addRecentlyViewed } from '../storage/db';
-import NeonBackground from '../components/NeonBackground';
+import { FS, SP, RAD, gradFor } from '../../src/utils/theme';
+import { getDrinkById } from '../../src/hooks/useDrinks';
+import { useFavorites } from '../../src/hooks/useFavorites';
+import { addRecentlyViewed } from '../../src/storage/db';
+import NeonBackground from '../../src/components/NeonBackground';
+import { DrinkImage } from '../../src/components/DrinkImage';
+import { AlcoholBadge } from '../../src/components/AlcoholBadge';
+import { formatIngredient } from '../../src/utils/types';
+import { useAudio } from '../../src/audio/useAudio';
 
 const { width: W } = Dimensions.get('window');
 const HERO_H = 380;
@@ -42,10 +46,14 @@ export default function DetailScreen() {
   const drink = getDrinkById(id ?? '');
   const grad = gradFor(drink?.category);
   const isFav = favorites.has(id ?? '');
+  const { playSfx } = useAudio();
 
   useEffect(() => {
-    if (id) addRecentlyViewed(id);
-  }, [id]);
+    if (id) {
+      addRecentlyViewed(id);
+      playSfx('open');
+    }
+  }, [id, playSfx]);
 
   const scrollY = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler({
@@ -163,7 +171,15 @@ export default function DetailScreen() {
           <Animated.View style={[styles.heroGlow, heroGlowStyle]} />
 
           <Animated.View style={[styles.heroEmojiWrap, emojiStyle]}>
-            <Text style={styles.heroEmoji}>{drink.image}</Text>
+            <DrinkImage
+              slug={drink.image_path || drink.slug}
+              emoji={drink.emoji}
+              category={drink.category}
+              size="xl"
+              radius={160}
+              style={styles.heroImage}
+              showShine
+            />
           </Animated.View>
 
           <LinearGradient
@@ -188,11 +204,11 @@ export default function DetailScreen() {
               entering={FadeInUp.duration(500).delay(260)}
               style={styles.heroPills}
             >
-              <View style={styles.heroPill}>
-                <Text style={styles.heroPillTxt}>
-                  {drink.type === 'cocktail' ? '🍸 Cocktail' : '🧃 Mocktail'}
-                </Text>
-              </View>
+              <AlcoholBadge
+                type={drink.type}
+                level={drink.alcohol_level}
+                percentage={drink.alcohol_percentage}
+              />
               {drink.rating ? (
                 <View style={styles.heroPill}>
                   <Ionicons name="star" size={12} color="#FFD166" />
@@ -201,7 +217,7 @@ export default function DetailScreen() {
               ) : null}
               <View style={styles.heroPill}>
                 <Ionicons name="time-outline" size={12} color="#fff" />
-                <Text style={styles.heroPillTxt}>{drink.prepTime ?? 5} min</Text>
+                <Text style={styles.heroPillTxt}>{drink.prep_time ?? 5} min</Text>
               </View>
             </Animated.View>
           </View>
@@ -214,7 +230,7 @@ export default function DetailScreen() {
         >
           <StatChip
             icon="time-outline"
-            value={String(drink.prepTime ?? 5)}
+            value={String(drink.prep_time ?? 5)}
             label="MIN"
             tint="#00E5FF"
           />
@@ -244,12 +260,12 @@ export default function DetailScreen() {
           <View style={styles.chipWrap}>
             {drink.ingredients.map((ing, i) => (
               <Animated.View
-                key={ing}
+                key={`${ing.name}-${i}`}
                 entering={FadeInRight.duration(350).delay(280 + i * 40)}
               >
                 <View style={styles.ingChip}>
                   <View style={[styles.ingDot, { backgroundColor: grad[1] }]} />
-                  <Text style={styles.ingTxt}>{ing}</Text>
+                  <Text style={styles.ingTxt}>{formatIngredient(ing)}</Text>
                 </View>
               </Animated.View>
             ))}
@@ -299,6 +315,7 @@ export default function DetailScreen() {
         <Pressable
           onPress={() => {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+            playSfx(isFav ? 'unsave' : 'save');
             toggleFavorite(drink.id);
           }}
           style={styles.cta}
@@ -440,6 +457,15 @@ const styles = StyleSheet.create({
     fontSize: 160,
     textShadowColor: 'rgba(0,0,0,0.5)',
     textShadowRadius: 30,
+  },
+  heroImage: {
+    width: 200,
+    height: 200,
+    shadowColor: '#000',
+    shadowOpacity: 0.45,
+    shadowRadius: 30,
+    shadowOffset: { width: 0, height: 10 },
+    elevation: 14,
   },
   heroShade: {
     position: 'absolute',
