@@ -14,12 +14,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
 import Animated, {
-  FadeInUp,
-  Layout,
   useSharedValue,
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
+
+// NOTE: Reanimated 4.1.x entering/layout animations crash on Android + Fabric
+// ("String translate must be a percentage"). Props disabled until the dev
+// client is rebuilt with a fixed Reanimated.
 
 import { FS, SP, RAD, gradFor } from '../utils/theme';
 import { Drink } from '../utils/types';
@@ -89,12 +91,8 @@ export default function FavoritesScreen() {
             contentContainerStyle={styles.grid}
             showsVerticalScrollIndicator={false}
           >
-            {favDrinks.map((d, i) => (
-              <Animated.View
-                key={d.id}
-                entering={FadeInUp.duration(420).delay(i * 50)}
-                layout={Layout.springify()}
-              >
+            {favDrinks.map((d) => (
+              <Animated.View key={d.id}>
                 <FavCard
                   drink={d}
                   onPress={() => onPress(d)}

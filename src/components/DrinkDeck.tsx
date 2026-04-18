@@ -23,13 +23,18 @@ import Animated, {
 } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import { Drink } from '../utils/types';
-import { FS, SP, RAD, gradFor } from '../utils/theme';
+import { FS, SP, RAD, heroGradFor } from '../utils/theme';
 import { DrinkImage } from './DrinkImage';
 import { AlcoholBadge } from './AlcoholBadge';
 
 const { width: W, height: H } = Dimensions.get('window');
 const CARD_W = Math.min(W - SP.md * 2, 400);
 const CARD_H = Math.min(H * 0.62, 600);
+/** Hero art must fit inside `heroWrap` (no overflow clip) — was 260 in a ~42%-tall band. */
+const DECK_HERO_WRAP_H = CARD_H * 0.42;
+const DECK_HERO_IMAGE = Math.floor(
+  Math.min(CARD_W * 0.88, DECK_HERO_WRAP_H * 0.92)
+);
 const SWIPE_OUT = W * 1.2;
 const SWIPE_THRESHOLD = W * 0.28;
 
@@ -224,11 +229,15 @@ function DeckCard({
     return {
       transform: [
         { translateX: tx.value + shake.value },
-        { translateY: ty.value + withSpring(targetY) },
+        // Never call withSpring() inside useAnimatedStyle for translate/scale —
+        // it is not a number; Reanimated 4 Fabric can crash on touch with
+        // "String translate must be a percentage". targetY/targetScale are
+        // static per card (depth); springs belong on shared values in handlers.
+        { translateY: ty.value + targetY },
         { rotate: `${rot}deg` },
-        { scale: withSpring(targetScale, { damping: 14 }) },
+        { scale: targetScale },
       ],
-      opacity: withSpring(1 - depth * 0.15),
+      opacity: 1 - depth * 0.15,
       zIndex: 10 - depth,
     };
   });
@@ -286,7 +295,7 @@ function DeckCard({
     opacity: isTop ? 0.5 : 0,
   }));
 
-  const grad = gradFor(drink.category);
+  const grad = heroGradFor(drink.slug, drink.category);
 
   return (
     <GestureDetector gesture={composed}>
@@ -335,6 +344,11 @@ function DeckCard({
             emoji={drink.emoji}
             category={drink.category}
             size="hero"
+            radius={RAD.xl}
+            style={{
+              width: DECK_HERO_IMAGE,
+              height: DECK_HERO_IMAGE,
+            }}
           />
           {drink.rating ? (
             <View style={styles.ratingPill}>
@@ -499,7 +513,6 @@ const styles = StyleSheet.create({
     height: CARD_H * 0.42,
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden',
   },
   heroEmoji: { fontSize: 140, textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 20 },
   shimmer: {

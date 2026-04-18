@@ -15,7 +15,9 @@ function scoreMatch(drink: Drink, selectedSet: Set<string>): IngredientMatch {
       : have.length / drink.ingredients.length;
   let status: IngredientMatch['status'] = 'far';
   if (missing.length === 0) status = 'ready';
-  else if (missing.length <= 2) status = 'almost';
+  // Only "almost" when this drink already shares the bar — not every 2-ingredient
+  // recipe when the user picked something unrelated (missing ≤2 was too loose).
+  else if (have.length > 0 && missing.length <= 2) status = 'almost';
   return { drink, have, missing, matchScore, status };
 }
 

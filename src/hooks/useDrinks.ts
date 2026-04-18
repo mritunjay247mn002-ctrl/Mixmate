@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { AlcoholFilter, Drink, MoodKey } from '../utils/types';
 import { MOODS } from '../utils/theme';
+import { sortDrinksWithBundledImagesFirst } from '../utils/drinkImageSort';
 import { getAllDrinks, queryDrinks } from '../storage/db';
 
 /**
@@ -30,15 +31,15 @@ export function useDrinks(
       const m = MOODS.find((x) => x.key === mood);
       if (m) list = list.filter((d) => m.match(d));
     }
-    return list;
+    return sortDrinksWithBundledImagesFirst(list);
   }, [filter, query, mood]);
 
   const featured = useMemo(
-    () => all.filter((d) => d.is_popular).slice(0, 6),
+    () => sortDrinksWithBundledImagesFirst(all.filter((d) => d.is_popular)).slice(0, 6),
     [all]
   );
   const trending = useMemo(
-    () => all.filter((d) => d.is_trending).slice(0, 6),
+    () => sortDrinksWithBundledImagesFirst(all.filter((d) => d.is_trending)).slice(0, 6),
     [all]
   );
 

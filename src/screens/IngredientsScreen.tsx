@@ -14,13 +14,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
 import Animated, {
-  FadeIn,
-  FadeOut,
-  Layout,
   useSharedValue,
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
+
+// NOTE: Reanimated 4.1.x entering/layout animations crash on Android + Fabric
+// ("String translate must be a percentage"). Props disabled until the dev
+// client is rebuilt with a fixed Reanimated.
 
 import { FS, SP, RAD } from '../utils/theme';
 import { getAllIngredientNames } from '../hooks/useDrinks';
@@ -194,7 +195,7 @@ export default function IngredientsScreen() {
 
         {/* Selected chip strip */}
         {selected.length > 0 ? (
-          <Animated.View entering={FadeIn} exiting={FadeOut} layout={Layout.springify()}>
+          <Animated.View>
             <View style={styles.selRow}>
               <Text style={styles.selLbl}>YOUR BAR · {selected.length}</Text>
               <Pressable onPress={() => setSelected([])}>

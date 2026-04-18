@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
+import { useFocusEffect } from 'expo-router';
 import {
   View,
   Text,
@@ -20,6 +21,11 @@ import Animated, {
 } from 'react-native-reanimated';
 import { FS, SP, RAD } from '../utils/theme';
 import { Drink, AlcoholFilter as AlcoholFilterKey, MoodKey } from '../utils/types';
+import {
+  filterDrinksWithBundledImagesOnly,
+  sortDrinksWithBundledImagesFirst,
+} from '../utils/drinkImageSort';
+import { getMixologistDisplayTitle } from '../utils/mixologistTitles';
 import { useDrinks } from '../hooks/useDrinks';
 import { useFavorites } from '../hooks/useFavorites';
 import { useRecentlyViewed } from '../hooks/useRecentlyViewed';
@@ -34,6 +40,7 @@ import { AlcoholFilter } from '../components/AlcoholFilter';
 import { DrinkImage } from '../components/DrinkImage';
 import { BeatPulse } from '../components/BeatPulse';
 import { useAudio } from '../audio/useAudio';
+import HomeNativeAd from '../components/HomeNativeAd';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -57,6 +64,15 @@ export default function HomeScreen() {
   const { addRecent } = useRecentlyViewed();
   const { litMyMood, state: audio, togglePlay, playSfx } = useAudio();
 
+  const [mixologistTitle, setMixologistTitle] = useState(() =>
+    getMixologistDisplayTitle()
+  );
+  useFocusEffect(
+    useCallback(() => {
+      setMixologistTitle(getMixologistDisplayTitle());
+    }, [])
+  );
+
   const hour = new Date().getHours();
   const greeting =
     hour < 6 ? 'Still up?' :
@@ -77,22 +93,39 @@ export default function HomeScreen() {
   // show the filtered result; otherwise we interleave featured + trending with
   // the filtered pool for serendipitous variety.
   const deck = useMemo<Drink[]>(() => {
-    if (query.trim().length > 0 || mood !== 'all' || filter !== 'all') return filtered;
-    const seen = new Set<string>();
-    const out: Drink[] = [];
-    [...featured, ...trending, ...filtered].forEach((d) => {
-      if (!seen.has(d.id)) {
-        seen.add(d.id);
-        out.push(d);
-      }
-    });
-    return out;
+    let raw: Drink[];
+    if (query.trim().length > 0 || mood !== 'all' || filter !== 'all') {
+      raw = filtered;
+    } else {
+      const seen = new Set<string>();
+      raw = [];
+      [...featured, ...trending, ...filtered].forEach((d) => {
+        if (!seen.has(d.id)) {
+          seen.add(d.id);
+          raw.push(d);
+        }
+      });
+    }
+    const withBundledArt = filterDrinksWithBundledImagesOnly(raw);
+    return sortDrinksWithBundledImagesFirst(withBundledArt);
   }, [filtered, featured, trending, query, mood, filter]);
+
+  const trendingWithBundledArt = useMemo(
+    () => filterDrinksWithBundledImagesOnly(trending),
+    [trending]
+  );
+
+  const partyDrinkPool = useMemo(
+    () =>
+      filterDrinksWithBundledImagesOnly([...featured, ...trending, ...filtered]),
+    [featured, trending, filtered]
+  );
 
   // Shake-to-generate
   const shakeFlash = useSharedValue(0);
   const surpriseMe = useCallback(() => {
-    const pool = deck.length > 0 ? deck : filtered;
+    const bundledFiltered = filterDrinksWithBundledImagesOnly(filtered);
+    const pool = deck.length > 0 ? deck : bundledFiltered;
     if (pool.length === 0) return;
     const pick = pool[Math.floor(Math.random() * pool.length)];
     setSurpriseDrink(pick);
@@ -128,6 +161,7 @@ export default function HomeScreen() {
           <View style={styles.header}>
             <View style={{ flex: 1 }}>
               <Text style={styles.kicker}>{greeting.toUpperCase()}</Text>
+              <Text style={styles.mixologistLine}>{mixologistTitle}</Text>
               <Text style={styles.title}>What shall we mix?</Text>
             </View>
             <View style={styles.nightBadge}>
@@ -227,14 +261,16 @@ export default function HomeScreen() {
           </View>
 
           {/* Trending ribbon */}
-          {mood === 'all' && query.length === 0 && trending.length > 0 ? (
+          {mood === 'all' && query.length === 0 && trendingWithBundledArt.length > 0 ? (
             <TrendingRibbon
-              drinks={trending}
+              drinks={trendingWithBundledArt}
               onPress={onOpen}
               isFav={isFav}
               toggleFav={toggleFavorite}
             />
           ) : null}
+
+          <HomeNativeAd />
         </ScrollView>
       </SafeAreaView>
 
@@ -248,7 +284,7 @@ export default function HomeScreen() {
         visible={partyOpen}
         onClose={() => setPartyOpen(false)}
         onPickDrink={onOpen}
-        drinks={[...featured, ...trending, ...filtered]}
+        drinks={partyDrinkPool}
       />
     </View>
   );
@@ -372,12 +408,20 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     letterSpacing: 2.4,
   },
+  mixologistLine: {
+    color: '#D4AF37',
+    fontSize: 12,
+    fontWeight: '700',
+    letterSpacing: 1.2,
+    marginTop: 4,
+    textTransform: 'uppercase',
+  },
   title: {
     color: 'white',
     fontSize: FS.display,
     fontWeight: '900',
     letterSpacing: -1,
-    marginTop: 2,
+    marginTop: 4,
   },
   nightBadge: {
     width: 48,

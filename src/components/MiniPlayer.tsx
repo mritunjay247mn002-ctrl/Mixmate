@@ -13,9 +13,6 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import Animated, {
   Easing,
-  FadeIn,
-  FadeInUp,
-  FadeOut,
   cancelAnimation,
   interpolate,
   useAnimatedStyle,
@@ -24,6 +21,12 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+
+// NOTE: Reanimated 4.1.x entering/exiting animations (FadeIn, FadeInUp,
+// FadeOut, ...) crash on Android + Fabric with "String translate must be a
+// percentage" — a Reanimated-side validator bug. Props are omitted until the
+// dev client is rebuilt with a fixed Reanimated; the EQ bars and spinning
+// disc still animate because they use numeric-only useAnimatedStyle hooks.
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAudio } from '../audio/useAudio';
 import { FS, GLASS_BORDER, RAD, SP } from '../utils/theme';
@@ -62,7 +65,6 @@ export function MiniPlayer() {
     <Animated.View
       pointerEvents="box-none"
       style={[styles.wrap, { bottom: Math.max(insets.bottom, 10) + 76 }]}
-      entering={FadeInUp.duration(380)}
     >
       <Pressable
         onPress={() => {
@@ -215,8 +217,6 @@ function ExpandedPlayer({
 
   return (
     <Animated.View
-      entering={FadeIn.duration(260)}
-      exiting={FadeOut.duration(200)}
       style={StyleSheet.absoluteFill}
       pointerEvents="auto"
     >

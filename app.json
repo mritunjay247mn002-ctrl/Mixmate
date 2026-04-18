@@ -3,17 +3,21 @@
     "name": "MixMate",
     "slug": "mixmate",
     "version": "1.0.0",
+    "newArchEnabled": true,
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/icon/icon-forground.png",
     "splash": {
+      "image": "./assets/images/icon/splashicon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0F0A1E"
+      "backgroundColor": "#07020F"
     },
     "android": {
       "package": "com.mixmate.app",
-      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#0F0A1E"
+        "foregroundImage": "./assets/images/icon/icon-forground.png",
+        "backgroundImage": "./assets/images/icon/icon-background.png",
+        "backgroundColor": "#07020F"
       },
       "runtimeVersion": "1.0.0"
     },
@@ -24,9 +28,30 @@
         "policy": "appVersion"
       }
     },
+    "web": {
+      "favicon": "./assets/images/icon/favicon.png"
+    },
     "plugins": [
       "expo-router",
-      "expo-font"
+      "expo-font",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-7196794781919537~5934684696",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 24
+          }
+        }
+      ],
+      "./plugins/withAdMobAndroidManifest.js"
     ],
     "scheme": "mixmate",
     "experiments": {

@@ -127,16 +127,26 @@ class AudioManagerImpl {
 
   // ─── Core loading (single Sound invariant) ──────────────────────────────
 
+  /** Avoid uncaught "Player does not exist" when unload races status callbacks. */
+  private async safeUnloadSoundInstance(s: Audio.Sound | null): Promise<void> {
+    if (!s) return;
+    try {
+      try {
+        s.setOnPlaybackStatusUpdate(null);
+      } catch {
+        /* ignore */
+      }
+      await s.unloadAsync();
+    } catch {
+      /* already unloaded / native player torn down */
+    }
+  }
+
   private async unloadSound(): Promise<void> {
     if (!this.sound) return;
     const s = this.sound;
     this.sound = null;
-    try {
-      s.setOnPlaybackStatusUpdate(null);
-      await s.unloadAsync();
-    } catch {
-      // ignore — cleanup best-effort
-    }
+    await this.safeUnloadSoundInstance(s);
   }
 
   private async loadAt(index: number, autoPlay = true): Promise<void> {
@@ -343,43 +353,38 @@ class AudioManagerImpl {
    * object is fully unloaded once playback finishes.
    */
   async playSfx(key: SfxKey): Promise<void> {
-    const source = resolveSfx(key);
-    if (source == null) return; // unregistered — silently no-op
-
-    await this.ensureAudioMode();
-
-    // Always unload any previous SFX that might still be in flight.
-    if (this.sfxSound) {
-      const prev = this.sfxSound;
-      this.sfxSound = null;
-      try {
-        prev.setOnPlaybackStatusUpdate(null);
-        await prev.unloadAsync();
-      } catch {
-        /* ignore */
-      }
-    }
-
     try {
-      const { sound } = await Audio.Sound.createAsync(source, {
-        shouldPlay: true,
-        volume: 0.9,
-      });
-      this.sfxSound = sound;
-      sound.setOnPlaybackStatusUpdate(async (st) => {
-        if (!st.isLoaded) return;
-        if ((st as AVPlaybackStatusSuccess).didJustFinish) {
-          try {
-            sound.setOnPlaybackStatusUpdate(null);
-            await sound.unloadAsync();
-          } catch {
-            /* ignore */
+      const source = resolveSfx(key);
+      if (source == null) return; // unregistered — silently no-op
+
+      await this.ensureAudioMode();
+
+      // Always unload any previous SFX that might still be in flight.
+      if (this.sfxSound) {
+        const prev = this.sfxSound;
+        this.sfxSound = null;
+        await this.safeUnloadSoundInstance(prev);
+      }
+
+      try {
+        const { sound } = await Audio.Sound.createAsync(source, {
+          shouldPlay: true,
+          volume: 0.9,
+        });
+        this.sfxSound = sound;
+        sound.setOnPlaybackStatusUpdate((st) => {
+          if (!st.isLoaded) return;
+          if ((st as AVPlaybackStatusSuccess).didJustFinish) {
+            void this.safeUnloadSoundInstance(sound).finally(() => {
+              if (this.sfxSound === sound) this.sfxSound = null;
+            });
           }
-          if (this.sfxSound === sound) this.sfxSound = null;
-        }
-      });
+        });
+      } catch (err) {
+        console.warn('[AudioManager] sfx load failed', key, err);
+      }
     } catch (err) {
-      console.warn('[AudioManager] sfx load failed', key, err);
+      console.warn('[AudioManager] playSfx failed', key, err);
     }
   }
 
@@ -387,14 +392,9 @@ class AudioManagerImpl {
 
   async dispose(): Promise<void> {
     await this.unloadSound();
-    if (this.sfxSound) {
-      try {
-        await this.sfxSound.unloadAsync();
-      } catch {
-        /* ignore */
-      }
-      this.sfxSound = null;
-    }
+    const sfx = this.sfxSound;
+    this.sfxSound = null;
+    await this.safeUnloadSoundInstance(sfx);
     this.listeners.clear();
   }
 }

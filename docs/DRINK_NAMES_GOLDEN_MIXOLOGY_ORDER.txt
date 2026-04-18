@@ -1,0 +1,501 @@
+Adonis
+Affogato
+Algonquin
+Almond Horchata
+Amaretto and Soda
+Amaretto Sour
+Aperol Spritz
+Apple Cider Fizz
+Apple Martini
+Apricot Cooler
+Apricot Nectar Cooler
+Arnold Palmer
+Aviation
+B-52
+Bahama Mama
+Bamboo
+Banana Smoothie
+Basil Lemon Fizz
+Basil Lemonade
+Bay Breeze
+Bellini
+Bensonhurst
+Berry Basil Sparkler
+Berry Blast
+Berry Iced Tea
+Between the Sheets
+Black Manhattan
+Black Russian
+Blood Orange Spritz
+Blue Hawaiian
+Blue Raspberry Splash
+Blueberry Lemonade
+Blueberry Mint Fizz
+Blueberry Mojito
+Bobby Burns
+Boulevardier
+Bourbon Lemonade
+Brandy Alexander
+Brandy Sour
+Brooklyn
+Brown Derby
+Butterbeer
+Buttery Nipple
+Caipirinha
+Caipiroska
+Campari Spritz
+Cantaloupe Cooler
+Cape Codder
+Captain Collins
+Caramel Apple Smash
+Chai Latte
+Charcoal Lemonade
+Cherry Cooler
+Chi Chi
+Chocolate Martini
+Chocolate Milkshake
+Chocolate Mint Frappe
+Chrysanthemum
+Cinderella
+Classic Margarita
+Classic Martini
+Classic Negroni
+Classic Old Fashioned
+Clover Club
+Cobble Hill
+Coconut Cocoa Shake
+Coconut Lime Smash
+Coconut Mojito
+Coconut Water Splash
+Cold Brew Cream
+Cold Brew Tonic
+Copper Bourbon Whiskey Sour
+Copper Brandy Sour
+Copper Cachaca Sour
+Copper Cognac Sour
+Copper Dark Rum Sour
+Copper Gin Sour
+Copper Gold Rum Sour
+Copper Irish Whiskey Sour
+Copper Mezcal Sour
+Copper Pisco Sour
+Copper Reposado Tequila Sour
+Copper Rye Whiskey Sour
+Copper Scotch Whisky Sour
+Copper Tequila Sour
+Copper Vodka Sour
+Copper White Rum Sour
+Corpse Reviver #2
+Cosmopolitan
+Cranberry Apple Spritz
+Cranberry Kiss
+Cucumber Cilantro Cooler
+Cucumber Cooler
+Cucumber Lemonade
+Cucumber Martini
+Cucumber Mint Spritz
+Dark and Stormy
+Dark Mojito
+Diamond Fizz
+Dirty Martini
+Division Bell
+Dragon Punch
+Dragonfruit Cooler
+Dry Martini
+Egg Cream
+El Diablo
+El Presidente
+Espresso Martini
+Fig Smash
+Final Ward
+Fish House Punch
+Fizzy Orange Spice
+French 75
+French Martini
+Frozen Banana Daiquiri
+Frozen Daiquiri
+Frozen Hot Chocolate
+Frozen Lemonade
+Frozen Mango Daiquiri
+Frozen Mango Smoothie
+Frozen Margarita
+Frozen Peach Margarita
+Frozen Pina Colada
+Frozen Strawberry Daiquiri
+Garden Bourbon Whiskey Sour
+Garden Brandy Sour
+Garden Cachaca Sour
+Garden Cognac Sour
+Garden Dark Rum Sour
+Garden Gin Sour
+Garden Gold Rum Sour
+Garden Irish Whiskey Sour
+Garden Mezcal Sour
+Garden Pisco Sour
+Garden Reposado Tequila Sour
+Garden Rye Whiskey Sour
+Garden Scotch Whisky Sour
+Garden Tequila Sour
+Garden Vodka Sour
+Garden White Rum Sour
+Gimlet
+Gin and Tonic
+Gin Buck
+Gin Fizz
+Gin Sour
+Ginger Fizz
+Ginger Julep
+Ginger Mojito
+Gingerbread Latte
+Godfather
+Godmother
+Gold Mojito
+Gold Rush
+Golden Cadillac
+Golden Fizz
+Golden Turmeric Tonic
+Goombay Smash
+Grape Frost
+Grasshopper
+Green Apple Basil Smash
+Green Goddess Smoothie
+Green Swizzle
+Green Tea Lemonade
+Greenpoint
+Greyhound
+Guava Cooler
+Guava Sunrise
+Hanky Panky
+Harbor Bourbon Whiskey Sour
+Harbor Brandy Sour
+Harbor Cachaca Sour
+Harbor Cognac Sour
+Harbor Dark Rum Sour
+Harbor Gin Sour
+Harbor Gold Rum Sour
+Harbor Irish Whiskey Sour
+Harbor Mezcal Sour
+Harbor Pisco Sour
+Harbor Reposado Tequila Sour
+Harbor Rye Whiskey Sour
+Harbor Scotch Whisky Sour
+Harbor Tequila Sour
+Harbor Vodka Sour
+Harbor White Rum Sour
+Harvard
+Hemingway Daiquiri
+Hibiscus Iced Tea
+Hibiscus Lime Spritz
+Honey Citrus Punch
+Honey Peach Iced Tea
+Horsefeather
+Hot Buttered Rum
+Hot Toddy
+Hotel Nacional Special
+Hugo Spritz
+Hunch Punch
+Hurricane
+Iced Caramel Latte
+Iced Hibiscus Rose
+Iced Matcha Latte
+Iced Thai Peach Tea
+Irish Coffee
+Irish Maid
+Irish Old Fashioned
+Italian Soda
+Jack and Coke
+Jagerbomb
+Japanese Cocktail
+John Collins
+John Daly
+Juan Collins
+Jungle Bird
+Kamikaze
+Kamikaze Shot
+Kentucky Buck
+Kentucky Mule
+Kir Royale
+Kiwi Cooler
+Kombucha Cooler
+Last Word
+Lavender Lemon Fizz
+Lavender Lemonade
+Lemon Drop
+Lemon Drop Shot
+Lemon Ginger Detox
+Lillet Spritz
+Limoncello Spritz
+Little Italy
+London Mule
+Lychee Cooler
+Lychee Martini
+Lychee Rose Cooler
+Madras
+Mai Tai
+Malibu Sunset
+Mango Chili Fizz
+Mango Coconut Slush
+Mango Cooler
+Mango Lassi
+Mango Lemonade
+Mango Mojito
+Manhattan
+Maple Cinnamon Shake
+Maple Old Fashioned
+Martinez
+Mary Pickford
+Masala Chaas
+Melon Lime Cooler
+Melon Splash
+Mexican Mule
+Mezcal Margarita
+Mezcal Negroni
+Miami Vice
+Michael Collins
+Midori Sour
+Mimosa
+Mind Eraser
+Mint Chocolate Shake
+Mint Julep
+Mocha Frappe
+Monte Carlo
+Moscow Mule
+Mudslide
+Mulled Wine
+Naked and Famous
+New York Sour
+Nojito
+Orange Blossom Fizz
+Orange Cream Soda
+Orange Vanilla Float
+Orchard Crush
+Orchid Mint Sparkle
+Oriental
+Painkiller
+Paloma
+Papaya Cooler
+Papaya Lime Smoothie
+Paper Plane
+Passionfruit Cooler
+Passionfruit Mojito
+Passionfruit Pearl
+Peach Bellini Mocktail
+Peach Ginger Iced Tea
+Peach Green Tea
+Peach Julep
+Peach Lemonade
+Peach Mojito
+Peach Raspberry Iced Tea
+Pear Ginger Sparkler
+Pedro Collins
+Penicillin
+Perfect Manhattan
+Pierre Collins
+Pimms Cup
+Pina Colada
+Pineapple Basil Fizz
+Pineapple Coconut Iced Tea
+Pineapple Cooler
+Pineapple Ginger Cooler
+Pineapple Julep
+Pineapple Lemonade
+Pineapple Mojito
+Pineapple Turmeric Shot
+Pink Lady
+Pink Lemonade
+Pink Squirrel
+Pisco Sour
+Planters Punch
+Pomegranate Fizz
+Pomegranate Lemonade
+Pomegranate Mint Cooler
+Pornstar Martini
+Presidente
+Pumpkin Spice Latte
+Queen's Park Swizzle
+Ramos Gin Fizz
+Raspberry Chia Fresca
+Raspberry Lemonade
+Raspberry Lime Rickey
+Raspberry Mojito
+Raspberry Rose Crush
+Red Hook
+Remember Me
+Remember the Maine
+Rob Roy
+Rose Cardamom Cooler
+Rose Falooda
+Rose Lemonade
+Rose Sherbet Soda
+Rosita
+Rossini
+Roy Rogers
+Royal Fizz
+Royal Hawaiian
+Rum and Coke
+Rum Buck
+Rum Old Fashioned
+Rum Punch
+Rum Sour
+Rum Swizzle
+Rusty Nail
+Safe Sex on the Beach
+Saffron Rose Milk
+Sangria (Red)
+Sangria (White)
+Saratoga
+Sbagliato
+Scofflaw
+Scotch Sour
+Screwdriver
+Sea Breeze
+Seelbach
+Shirley Temple
+Sidecar
+Silver Bourbon Whiskey Sour
+Silver Dark Rum Sour
+Silver Fizz
+Silver Gin Sour
+Silver Gold Rum Sour
+Silver Irish Whiskey Sour
+Silver Rye Whiskey Sour
+Silver Scotch Whisky Sour
+Silver Tequila Sour
+Silver Vodka Sour
+Silver White Rum Sour
+Singapore Sling
+Slippery Nipple
+Sloe Gin Fizz
+Smoked Old Fashioned
+Sparkling Cranberry
+Sparkling Elderflower
+Sparkling Pomegranate Rose
+Sparkling Rose Lemonade
+Sparkling Watermelon Rose
+Spiced Apple Mocktail
+Spiced Cranberry Punch
+Spiced Hot Apple
+Spiced Mojito
+Spicy Mango Cooler
+Spicy Margarita
+Spicy Watermelon Kick
+St-Germain Spritz
+Stinger
+Stone Fence
+Strawberry Basil Crush
+Strawberry Kiwi Splash
+Strawberry Lemonade
+Strawberry Milkshake
+Strawberry Mojito
+Strawberry Rhubarb Cooler
+Tailspin
+Tamarind Cooler
+Tamarind Margarita
+Taro Bubble Milk Tea
+Tequila Gimlet
+Tequila Grapefruit
+Tequila Old Fashioned
+Tequila Shot
+Tequila Sour
+Tequila Sunrise
+Thai Iced Tea
+The Anchorage Sour
+The Asheville Sour
+The Austin Sour
+The Baltimore Sour
+The Boise Sour
+The Boston Sour
+The Charleston Sour
+The Chicago Sour
+The Cincinnati Sour
+The Cleveland Sour
+The Dallas Sour
+The Denver Sour
+The Detroit Sour
+The Honolulu Sour
+The Houston Sour
+The Kansas City Sour
+The Key West Sour
+The Memphis Sour
+The Milwaukee Sour
+The Minneapolis Sour
+The Monterey Sour
+The Montreal Sour
+The Nashville Sour
+The New Orleans Sour
+The Philadelphia Sour
+The Phoenix Sour
+The Pittsburgh Sour
+The Portland Sour
+The Reno Sour
+The Richmond Sour
+The Salt Lake City Sour
+The San Antonio Sour
+The Santa Barbara Sour
+The Santa Fe Sour
+The Savannah Sour
+The Seattle Sour
+The St Louis Sour
+The Toronto Sour
+The Tucson Sour
+The Vancouver Sour
+Tiger Milk
+Tipperary
+Tom and Jerry
+Tom Collins
+Tommy's Margarita
+Trinidad Sour
+Tropical Fruit Punch
+Tropical Iced Green Tea
+Tropical Mocktail Punch
+Tropical Sunrise
+Tuxedo
+Vanilla Almond Latte
+Vanilla Bean Frappe
+Velvet Bourbon Whiskey Sour
+Velvet Brandy Sour
+Velvet Cachaca Sour
+Velvet Cognac Sour
+Velvet Dark Rum Sour
+Velvet Gin Sour
+Velvet Gold Rum Sour
+Velvet Irish Whiskey Sour
+Velvet Mezcal Sour
+Velvet Pisco Sour
+Velvet Reposado Tequila Sour
+Velvet Rye Whiskey Sour
+Velvet Scotch Whisky Sour
+Velvet Tequila Sour
+Velvet Vodka Sour
+Velvet White Rum Sour
+Vesper Martini
+Vieux Carré
+Virgin Cosmopolitan
+Virgin Daiquiri
+Virgin Margarita
+Virgin Mary
+Virgin Mojito
+Virgin Mule
+Virgin Piña Colada
+Virgin Piña Mango
+Virgin Sangria
+Vodka Collins
+Vodka Gimlet
+Vodka Martini
+Vodka Soda
+Vodka Tonic
+Ward Eight
+Watermelon Agua Fresca
+Watermelon Lemonade
+Watermelon Mint Slush
+Watermelon Mojito
+Whiskey Ginger
+Whiskey Highball
+Whiskey Sour
+White Lady
+White Mojito
+White Negroni
+White Rum Gimlet
+White Russian
+Yuzu Sparkler
+Zombie

@@ -24,24 +24,32 @@ const ROUTES: Record<
   { label: string; icon: IoniconName; iconActive: IoniconName; grad: [string, string] }
 > = {
   index: {
-    label: 'Tonight',
+    label: 'Home',
     icon: 'moon-outline',
     iconActive: 'moon',
     grad: ['#B026FF', '#FF2E93'],
   },
+  explore: {
+    label: 'Explore',
+    icon: 'grid-outline',
+    iconActive: 'grid',
+    grad: ['#D4AF37', '#8B6914'],
+  },
   favorites: {
-    label: 'Saved',
+    label: 'Favorites',
     icon: 'heart-outline',
     iconActive: 'heart',
     grad: ['#FF4D6D', '#FF2E93'],
   },
-  ingredients: {
-    label: 'Bar',
-    icon: 'flask-outline',
-    iconActive: 'flask',
-    grad: ['#3CF5B0', '#00E5FF'],
+  profile: {
+    label: 'Profile',
+    icon: 'person-outline',
+    iconActive: 'person',
+    grad: ['#D4AF37', '#B026FF'],
   },
 };
+
+const TAB_ORDER = ['index', 'explore', 'favorites', 'profile'] as const;
 
 function NeonTabBar({ state, navigation }: BottomTabBarProps) {
   return (
@@ -79,23 +87,30 @@ function NeonTabBar({ state, navigation }: BottomTabBarProps) {
             style={StyleSheet.absoluteFill}
             pointerEvents="none"
           />
-          {state.routes.map((route, index) => {
-            const focused = state.index === index;
-            const cfg = ROUTES[route.name] ?? ROUTES.index;
-            return (
-              <TabBtn
-                key={route.key}
-                focused={focused}
-                cfg={cfg}
-                onPress={() => {
-                  if (!focused) {
-                    Haptics.selectionAsync().catch(() => {});
-                    navigation.navigate(route.name);
-                  }
-                }}
-              />
-            );
-          })}
+          {state.routes
+            .filter((r) => (TAB_ORDER as readonly string[]).includes(r.name))
+            .sort(
+              (a, b) =>
+                (TAB_ORDER as readonly string[]).indexOf(a.name) -
+                (TAB_ORDER as readonly string[]).indexOf(b.name)
+            )
+            .map((route) => {
+              const focused = state.routes[state.index]?.name === route.name;
+              const cfg = ROUTES[route.name] ?? ROUTES.index;
+              return (
+                <TabBtn
+                  key={route.key}
+                  focused={focused}
+                  cfg={cfg}
+                  onPress={() => {
+                    if (!focused) {
+                      Haptics.selectionAsync().catch(() => {});
+                      navigation.navigate(route.name);
+                    }
+                  }}
+                />
+              );
+            })}
         </View>
       </View>
     </SafeAreaView>
@@ -173,9 +188,11 @@ export default function TabsLayout() {
       }}
       tabBar={(props) => <NeonTabBar {...props} />}
     >
-      <Tabs.Screen name="index" options={{ title: 'Tonight' }} />
-      <Tabs.Screen name="favorites" options={{ title: 'Saved' }} />
-      <Tabs.Screen name="ingredients" options={{ title: 'Bar' }} />
+      <Tabs.Screen name="index" options={{ title: 'Home' }} />
+      <Tabs.Screen name="explore" options={{ title: 'Explore' }} />
+      <Tabs.Screen name="favorites" options={{ title: 'Favorites' }} />
+      <Tabs.Screen name="profile" options={{ title: 'Profile' }} />
+      <Tabs.Screen name="ingredients" options={{ title: 'Bar', href: null }} />
     </Tabs>
   );
 }

@@ -9,7 +9,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import { IngredientMatch } from '../utils/types';
-import { gradFor, FS, RAD, SP } from '../utils/theme';
+import { heroGradFor, FS, RAD, SP } from '../utils/theme';
 import MatchRing from './MatchRing';
 import IngredientChip from './IngredientChip';
 import { DrinkImage } from './DrinkImage';
@@ -22,7 +22,7 @@ interface Props {
 export default function MatchDrinkCard({ match, onPress }: Props) {
   const press = useSharedValue(0);
   const { drink, have, missing, matchScore, status } = match;
-  const grad = gradFor(drink.category);
+  const grad = heroGradFor(drink.slug, drink.category);
 
   const ringColors: [string, string] =
     status === 'ready'

@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-google-mobile-ads/android/build.gradle b/node_modules/react-native-google-mobile-ads/android/build.gradle
+index 8a31e69..49df5d1 100644
+--- a/node_modules/react-native-google-mobile-ads/android/build.gradle
++++ b/node_modules/react-native-google-mobile-ads/android/build.gradle
+@@ -99,6 +99,7 @@ if (!appJSONGoogleMobileAdsAppIDString) {
+ }
+ 
+ android {
++  namespace "io.invertase.googlemobileads"
+   defaultConfig {
+     multiDexEnabled true
+     manifestPlaceholders = [

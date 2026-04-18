@@ -1,0 +1,1423 @@
+{
+  "aviation": {
+    "gradient": [
+      "#3d160b",
+      "#632415"
+    ],
+    "accent": "#983820"
+  },
+  "tom-collins": {
+    "gradient": [
+      "#615e56",
+      "#8c8782"
+    ],
+    "accent": "#d8d0c0"
+  },
+  "adonis": {
+    "gradient": [
+      "#706c5e",
+      "#a19c8c"
+    ],
+    "accent": "#f8f0d0"
+  },
+  "affogato": {
+    "gradient": [
+      "#6c6c6c",
+      "#9ca19c"
+    ],
+    "accent": "#f0f8f0"
+  },
+  "algonquin": {
+    "gradient": [
+      "#706c5e",
+      "#a19c8c"
+    ],
+    "accent": "#f8f0d0"
+  },
+  "almond-horchata": {
+    "gradient": [
+      "#3a2b00",
+      "#584400"
+    ],
+    "accent": "#806000"
+  },
+  "amaretto-and-soda": {
+    "gradient": [
+      "#0b0e16",
+      "#151a24"
+    ],
+    "accent": "#202838"
+  },
+  "amaretto-sour": {
+    "gradient": [
+      "#41413d",
+      "#825824"
+    ],
+    "accent": "#909088"
+  },
+  "aperol-spritz": {
+    "gradient": [
+      "#320704",
+      "#685344"
+    ],
+    "accent": "#a08068"
+  },
+  "apple-cider-fizz": {
+    "gradient": [
+      "#484f4c",
+      "#727d78"
+    ],
+    "accent": "#a0b0a8"
+  },
+  "apple-martini": {
+    "gradient": [
+      "#685648",
+      "#97826d"
+    ],
+    "accent": "#e8c0a0"
+  },
+  "apricot-cooler": {
+    "gradient": [
+      "#4f3212",
+      "#824900"
+    ],
+    "accent": "#b07028"
+  },
+  "apricot-nectar-cooler": {
+    "gradient": [
+      "#4f3212",
+      "#824900"
+    ],
+    "accent": "#b07028"
+  },
+  "arnold-palmer": {
+    "gradient": [
+      "#070b07",
+      "#9c979c"
+    ],
+    "accent": "#f0e8f0"
+  },
+  "b-52": {
+    "gradient": [
+      "#0e0b07",
+      "#160d09"
+    ],
+    "accent": "#281810"
+  },
+  "bahama-mama": {
+    "gradient": [
+      "#683200",
+      "#924e00"
+    ],
+    "accent": "#e07800"
+  },
+  "bamboo": {
+    "gradient": [
+      "#0e070b",
+      "#824e34"
+    ],
+    "accent": "#201018"
+  },
+  "banana-smoothie": {
+    "gradient": [
+      "#484c4f",
+      "#6d7278"
+    ],
+    "accent": "#a8b0b8"
+  },
+  "basil-lemon-fizz": {
+    "gradient": [
+      "#4f565a",
+      "#787d82"
+    ],
+    "accent": "#b0c0c8"
+  },
+  "basil-lemonade": {
+    "gradient": [
+      "#202424",
+      "#343939"
+    ],
+    "accent": "#505858"
+  },
+  "bay-breeze": {
+    "gradient": [
+      "#650000",
+      "#970000"
+    ],
+    "accent": "#e00000"
+  },
+  "bellini": {
+    "gradient": [
+      "#0b0e0b",
+      "#151a15"
+    ],
+    "accent": "#182018"
+  },
+  "bensonhurst": {
+    "gradient": [
+      "#0e0b07",
+      "#230900"
+    ],
+    "accent": "#401000"
+  },
+  "berry-basil-sparkler": {
+    "gradient": [
+      "#686870",
+      "#9c9ca1"
+    ],
+    "accent": "#f0f0f8"
+  },
+  "berry-blast": {
+    "gradient": [
+      "#161619",
+      "#24242a"
+    ],
+    "accent": "#383840"
+  },
+  "berry-iced-tea": {
+    "gradient": [
+      "#161619",
+      "#24242a"
+    ],
+    "accent": "#383840"
+  },
+  "between-the-sheets": {
+    "gradient": [
+      "#0b0b0b",
+      "#975300"
+    ],
+    "accent": "#181818"
+  },
+  "black-manhattan": {
+    "gradient": [
+      "#0e0707",
+      "#120909"
+    ],
+    "accent": "#201010"
+  },
+  "black-russian": {
+    "gradient": [
+      "#190b0e",
+      "#2f1f1a"
+    ],
+    "accent": "#381820"
+  },
+  "blood-orange-spritz": {
+    "gradient": [
+      "#535353",
+      "#7d7d7d"
+    ],
+    "accent": "#b8b8b8"
+  },
+  "blue-hawaiian": {
+    "gradient": [
+      "#6c5a4f",
+      "#9c8778"
+    ],
+    "accent": "#f0d0b8"
+  },
+  "blue-raspberry-splash": {
+    "gradient": [
+      "#615e5e",
+      "#928c8c"
+    ],
+    "accent": "#e0d8d8"
+  },
+  "blueberry-lemonade": {
+    "gradient": [
+      "#000e24",
+      "#004478"
+    ],
+    "accent": "#002050"
+  },
+  "blueberry-mint-fizz": {
+    "gradient": [
+      "#0e0707",
+      "#120909"
+    ],
+    "accent": "#201010"
+  },
+  "blueberry-mojito": {
+    "gradient": [
+      "#0e0707",
+      "#120909"
+    ],
+    "accent": "#201010"
+  },
+  "bobby-burns": {
+    "gradient": [
+      "#1d1607",
+      "#2f1f10"
+    ],
+    "accent": "#483018"
+  },
+  "boulevardier": {
+    "gradient": [
+      "#5a5e61",
+      "#828c8c"
+    ],
+    "accent": "#c8d0d8"
+  },
+  "bourbon-lemonade": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "brandy-alexander": {
+    "gradient": [
+      "#12120e",
+      "#1a1f15"
+    ],
+    "accent": "#283020"
+  },
+  "brandy-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "brooklyn": {
+    "gradient": [
+      "#160700",
+      "#8c7853"
+    ],
+    "accent": "#301000"
+  },
+  "brown-derby": {
+    "gradient": [
+      "#686865",
+      "#9c9c9c"
+    ],
+    "accent": "#f0f0f0"
+  },
+  "butterbeer": {
+    "gradient": [
+      "#535353",
+      "#878787"
+    ],
+    "accent": "#d0d0d0"
+  },
+  "buttery-nipple": {
+    "gradient": [
+      "#534432",
+      "#78684e"
+    ],
+    "accent": "#b89870"
+  },
+  "caipirinha": {
+    "gradient": [
+      "#565a61",
+      "#82828c"
+    ],
+    "accent": "#c8c8d8"
+  },
+  "caipiroska": {
+    "gradient": [
+      "#040b0b",
+      "#583924"
+    ],
+    "accent": "#081818"
+  },
+  "campari-spritz": {
+    "gradient": [
+      "#320000",
+      "#636363"
+    ],
+    "accent": "#700000"
+  },
+  "cantaloupe-cooler": {
+    "gradient": [
+      "#4c4f4f",
+      "#727278"
+    ],
+    "accent": "#a8b0b0"
+  },
+  "cape-codder": {
+    "gradient": [
+      "#0b0b0b",
+      "#1a1a1a"
+    ],
+    "accent": "#181818"
+  },
+  "captain-collins": {
+    "gradient": [
+      "#0e0b07",
+      "#2f1a10"
+    ],
+    "accent": "#201810"
+  },
+  "caramel-apple-smash": {
+    "gradient": [
+      "#2b0b00",
+      "#877d78"
+    ],
+    "accent": "#d0c0b8"
+  },
+  "chai-latte": {
+    "gradient": [
+      "#444848",
+      "#6d7272"
+    ],
+    "accent": "#a8b0b0"
+  },
+  "charcoal-lemonade": {
+    "gradient": [
+      "#1d190e",
+      "#2f2415"
+    ],
+    "accent": "#483820"
+  },
+  "cherry-cooler": {
+    "gradient": [
+      "#0e070b",
+      "#824e34"
+    ],
+    "accent": "#201018"
+  },
+  "chi-chi": {
+    "gradient": [
+      "#0e0b0b",
+      "#120d0d"
+    ],
+    "accent": "#201818"
+  },
+  "chocolate-martini": {
+    "gradient": [
+      "#2b4865",
+      "#446892"
+    ],
+    "accent": "#60a0e0"
+  },
+  "chocolate-milkshake": {
+    "gradient": [
+      "#0e0b0b",
+      "#151515"
+    ],
+    "accent": "#202020"
+  },
+  "chocolate-mint-frappe": {
+    "gradient": [
+      "#120404",
+      "#1a0404"
+    ],
+    "accent": "#300808"
+  },
+  "chrysanthemum": {
+    "gradient": [
+      "#686868",
+      "#97979c"
+    ],
+    "accent": "#e8e8e8"
+  },
+  "cinderella": {
+    "gradient": [
+      "#683200",
+      "#924e00"
+    ],
+    "accent": "#e07800"
+  },
+  "classic-margarita": {
+    "gradient": [
+      "#0b0b0b",
+      "#7d7d7d"
+    ],
+    "accent": "#181818"
+  },
+  "classic-martini": {
+    "gradient": [
+      "#0b0e0b",
+      "#151515"
+    ],
+    "accent": "#202020"
+  },
+  "classic-negroni": {
+    "gradient": [
+      "#161619",
+      "#24242a"
+    ],
+    "accent": "#303038"
+  },
+  "classic-old-fashioned": {
+    "gradient": [
+      "#0b0b0b",
+      "#151510"
+    ],
+    "accent": "#181818"
+  },
+  "clover-club": {
+    "gradient": [
+      "#160704",
+      "#1a0904"
+    ],
+    "accent": "#301008"
+  },
+  "cobble-hill": {
+    "gradient": [
+      "#533619",
+      "#82582a"
+    ],
+    "accent": "#c88840"
+  },
+  "coconut-cocoa-shake": {
+    "gradient": [
+      "#5e5a5a",
+      "#8c8787"
+    ],
+    "accent": "#d8d0d0"
+  },
+  "coconut-lime-smash": {
+    "gradient": [
+      "#0b0b07",
+      "#0d0d09"
+    ],
+    "accent": "#181810"
+  },
+  "coconut-mojito": {
+    "gradient": [
+      "#56534c",
+      "#827d72"
+    ],
+    "accent": "#c0b8a8"
+  },
+  "coconut-water-splash": {
+    "gradient": [
+      "#616161",
+      "#929292"
+    ],
+    "accent": "#e0e0e0"
+  },
+  "cold-brew-cream": {
+    "gradient": [
+      "#2f0e04",
+      "#491a0a"
+    ],
+    "accent": "#682008"
+  },
+  "cold-brew-tonic": {
+    "gradient": [
+      "#121212",
+      "#1a1a1f"
+    ],
+    "accent": "#282828"
+  },
+  "copper-bourbon-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "copper-brandy-sour": {
+    "gradient": [
+      "#0b0707",
+      "#0d0909"
+    ],
+    "accent": "#181010"
+  },
+  "copper-cachaca-sour": {
+    "gradient": [
+      "#5a4f3d",
+      "#87785e"
+    ],
+    "accent": "#d0b890"
+  },
+  "copper-cognac-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "copper-dark-rum-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "copper-gin-sour": {
+    "gradient": [
+      "#040b0e",
+      "#241005"
+    ],
+    "accent": "#081820"
+  },
+  "copper-gold-rum-sour": {
+    "gradient": [
+      "#0b0b0b",
+      "#1f1515"
+    ],
+    "accent": "#181818"
+  },
+  "copper-irish-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "copper-mezcal-sour": {
+    "gradient": [
+      "#0e0b07",
+      "#230900"
+    ],
+    "accent": "#401000"
+  },
+  "copper-pisco-sour": {
+    "gradient": [
+      "#484c3d",
+      "#687263"
+    ],
+    "accent": "#a0b098"
+  },
+  "copper-reposado-tequila-sour": {
+    "gradient": [
+      "#3a1600",
+      "#581f00"
+    ],
+    "accent": "#803000"
+  },
+  "copper-rye-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "copper-scotch-whisky-sour": {
+    "gradient": [
+      "#2f2820",
+      "#49392f"
+    ],
+    "accent": "#685848"
+  },
+  "copper-tequila-sour": {
+    "gradient": [
+      "#120e0b",
+      "#6d6353"
+    ],
+    "accent": "#282018"
+  },
+  "copper-vodka-sour": {
+    "gradient": [
+      "#0b0b07",
+      "#0d0d09"
+    ],
+    "accent": "#181810"
+  },
+  "copper-white-rum-sour": {
+    "gradient": [
+      "#68483a",
+      "#976858"
+    ],
+    "accent": "#e8a088"
+  },
+  "corpse-reviver-2": {
+    "gradient": [
+      "#0b0b0b",
+      "#0d0d0d"
+    ],
+    "accent": "#181818"
+  },
+  "cosmopolitan": {
+    "gradient": [
+      "#070b07",
+      "#928292"
+    ],
+    "accent": "#e0c8e0"
+  },
+  "cranberry-apple-spritz": {
+    "gradient": [
+      "#5e534f",
+      "#877d7d"
+    ],
+    "accent": "#d0c0c0"
+  },
+  "cranberry-kiss": {
+    "gradient": [
+      "#0b0b0b",
+      "#120d0d"
+    ],
+    "accent": "#201818"
+  },
+  "cucumber-cilantro-cooler": {
+    "gradient": [
+      "#120b04",
+      "#2a1505"
+    ],
+    "accent": "#281808"
+  },
+  "cucumber-cooler": {
+    "gradient": [
+      "#190e07",
+      "#2a150a"
+    ],
+    "accent": "#382010"
+  },
+  "cucumber-lemonade": {
+    "gradient": [
+      "#0b0e04",
+      "#0d1209"
+    ],
+    "accent": "#182010"
+  },
+  "cucumber-martini": {
+    "gradient": [
+      "#001d19",
+      "#002f2a"
+    ],
+    "accent": "#004038"
+  },
+  "cucumber-mint-spritz": {
+    "gradient": [
+      "#0b0b0b",
+      "#151515"
+    ],
+    "accent": "#202020"
+  },
+  "dark-and-stormy": {
+    "gradient": [
+      "#192b00",
+      "#2a4400"
+    ],
+    "accent": "#386000"
+  },
+  "dark-mojito": {
+    "gradient": [
+      "#040e0b",
+      "#9c9c9c"
+    ],
+    "accent": "#f0f0f0"
+  },
+  "diamond-fizz": {
+    "gradient": [
+      "#0b0b07",
+      "#0d0d0d"
+    ],
+    "accent": "#181818"
+  },
+  "dirty-martini": {
+    "gradient": [
+      "#4c4f53",
+      "#727d82"
+    ],
+    "accent": "#a8b0b8"
+  },
+  "division-bell": {
+    "gradient": [
+      "#0b0707",
+      "#0d0909"
+    ],
+    "accent": "#181010"
+  },
+  "dragon-punch": {
+    "gradient": [
+      "#0e0b00",
+      "#1f1a00"
+    ],
+    "accent": "#201800"
+  },
+  "dragonfruit-cooler": {
+    "gradient": [
+      "#161212",
+      "#878787"
+    ],
+    "accent": "#302828"
+  },
+  "dry-martini": {
+    "gradient": [
+      "#363d48",
+      "#535e6d"
+    ],
+    "accent": "#8090a8"
+  },
+  "egg-cream": {
+    "gradient": [
+      "#361d0e",
+      "#a19268"
+    ],
+    "accent": "#784020"
+  },
+  "el-diablo": {
+    "gradient": [
+      "#0e0700",
+      "#160d00"
+    ],
+    "accent": "#281800"
+  },
+  "el-presidente": {
+    "gradient": [
+      "#321d0b",
+      "#82532a"
+    ],
+    "accent": "#704018"
+  },
+  "espresso-martini": {
+    "gradient": [
+      "#4f4841",
+      "#786d63"
+    ],
+    "accent": "#b8a898"
+  },
+  "fig-smash": {
+    "gradient": [
+      "#615e5e",
+      "#928c87"
+    ],
+    "accent": "#d8d0d0"
+  },
+  "final-ward": {
+    "gradient": [
+      "#190700",
+      "#2f1000"
+    ],
+    "accent": "#481800"
+  },
+  "fish-house-punch": {
+    "gradient": [
+      "#0b0b07",
+      "#92877d"
+    ],
+    "accent": "#e0d0c0"
+  },
+  "fizzy-orange-spice": {
+    "gradient": [
+      "#703a20",
+      "#9c6353"
+    ],
+    "accent": "#f88048"
+  },
+  "french-75": {
+    "gradient": [
+      "#0b0b0b",
+      "#151515"
+    ],
+    "accent": "#181818"
+  },
+  "french-martini": {
+    "gradient": [
+      "#6c686c",
+      "#9c9c9c"
+    ],
+    "accent": "#f0e8f0"
+  },
+  "frozen-banana-daiquiri": {
+    "gradient": [
+      "#200000",
+      "#280000"
+    ],
+    "accent": "#480000"
+  },
+  "frozen-daiquiri": {
+    "gradient": [
+      "#200000",
+      "#280000"
+    ],
+    "accent": "#480000"
+  },
+  "frozen-hot-chocolate": {
+    "gradient": [
+      "#120404",
+      "#1a0404"
+    ],
+    "accent": "#300808"
+  },
+  "frozen-lemonade": {
+    "gradient": [
+      "#5e5653",
+      "#877d7d"
+    ],
+    "accent": "#d0c0b8"
+  },
+  "frozen-mango-daiquiri": {
+    "gradient": [
+      "#200000",
+      "#280000"
+    ],
+    "accent": "#480000"
+  },
+  "frozen-mango-smoothie": {
+    "gradient": [
+      "#4f4f61",
+      "#727892"
+    ],
+    "accent": "#b0b0d8"
+  },
+  "frozen-margarita": {
+    "gradient": [
+      "#0b0b0b",
+      "#7d7d7d"
+    ],
+    "accent": "#181818"
+  },
+  "frozen-peach-margarita": {
+    "gradient": [
+      "#0b0707",
+      "#0d0909"
+    ],
+    "accent": "#181010"
+  },
+  "frozen-pina-colada": {
+    "gradient": [
+      "#44322b",
+      "#634944"
+    ],
+    "accent": "#987068"
+  },
+  "frozen-strawberry-daiquiri": {
+    "gradient": [
+      "#200000",
+      "#280000"
+    ],
+    "accent": "#480000"
+  },
+  "garden-bourbon-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "garden-brandy-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "garden-cachaca-sour": {
+    "gradient": [
+      "#484c3d",
+      "#687263"
+    ],
+    "accent": "#a0b098"
+  },
+  "garden-cognac-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "garden-dark-rum-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "garden-gin-sour": {
+    "gradient": [
+      "#0b0e0b",
+      "#151515"
+    ],
+    "accent": "#182018"
+  },
+  "garden-gold-rum-sour": {
+    "gradient": [
+      "#0b0b0b",
+      "#1f1515"
+    ],
+    "accent": "#181818"
+  },
+  "garden-irish-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "garden-mezcal-sour": {
+    "gradient": [
+      "#0e0b07",
+      "#230900"
+    ],
+    "accent": "#401000"
+  },
+  "garden-pisco-sour": {
+    "gradient": [
+      "#484c3d",
+      "#687263"
+    ],
+    "accent": "#a0b098"
+  },
+  "garden-reposado-tequila-sour": {
+    "gradient": [
+      "#414448",
+      "#63686d"
+    ],
+    "accent": "#98a0a8"
+  },
+  "garden-rye-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "garden-scotch-whisky-sour": {
+    "gradient": [
+      "#2f2820",
+      "#49392f"
+    ],
+    "accent": "#685848"
+  },
+  "garden-tequila-sour": {
+    "gradient": [
+      "#120e0b",
+      "#6d6353"
+    ],
+    "accent": "#282018"
+  },
+  "garden-vodka-sour": {
+    "gradient": [
+      "#6c6c6c",
+      "#9c9ca1"
+    ],
+    "accent": "#f0f0f8"
+  },
+  "garden-white-rum-sour": {
+    "gradient": [
+      "#6c6c6c",
+      "#9c9ca1"
+    ],
+    "accent": "#f0f0f8"
+  },
+  "gimlet": {
+    "gradient": [
+      "#000e0b",
+      "#001612"
+    ],
+    "accent": "#002820"
+  },
+  "gin-and-tonic": {
+    "gradient": [
+      "#040b0e",
+      "#241005"
+    ],
+    "accent": "#081820"
+  },
+  "gin-buck": {
+    "gradient": [
+      "#000b12",
+      "#000d16"
+    ],
+    "accent": "#001828"
+  },
+  "gin-fizz": {
+    "gradient": [
+      "#0b1219",
+      "#151f2a"
+    ],
+    "accent": "#182838"
+  },
+  "gin-sour": {
+    "gradient": [
+      "#0b1219",
+      "#151f2a"
+    ],
+    "accent": "#182838"
+  },
+  "ginger-fizz": {
+    "gradient": [
+      "#0b0b07",
+      "#0d0d0d"
+    ],
+    "accent": "#181818"
+  },
+  "ginger-julep": {
+    "gradient": [
+      "#242019",
+      "#494434"
+    ],
+    "accent": "#706850"
+  },
+  "ginger-mojito": {
+    "gradient": [
+      "#040e0b",
+      "#9c9c9c"
+    ],
+    "accent": "#f0f0f0"
+  },
+  "gingerbread-latte": {
+    "gradient": [
+      "#190e07",
+      "#2a1505"
+    ],
+    "accent": "#382010"
+  },
+  "godfather": {
+    "gradient": [
+      "#120400",
+      "#1a0400"
+    ],
+    "accent": "#300800"
+  },
+  "godmother": {
+    "gradient": [
+      "#706c5e",
+      "#a19c8c"
+    ],
+    "accent": "#f8f0d0"
+  },
+  "gold-mojito": {
+    "gradient": [
+      "#040e0b",
+      "#9c9c9c"
+    ],
+    "accent": "#f0f0f0"
+  },
+  "gold-rush": {
+    "gradient": [
+      "#4c0000",
+      "#720000"
+    ],
+    "accent": "#a80000"
+  },
+  "golden-cadillac": {
+    "gradient": [
+      "#070e07",
+      "#091209"
+    ],
+    "accent": "#102010"
+  },
+  "golden-fizz": {
+    "gradient": [
+      "#5a2f00",
+      "#874400"
+    ],
+    "accent": "#d06800"
+  },
+  "golden-turmeric-tonic": {
+    "gradient": [
+      "#070b07",
+      "#0d0d09"
+    ],
+    "accent": "#181810"
+  },
+  "goombay-smash": {
+    "gradient": [
+      "#615e5e",
+      "#928c87"
+    ],
+    "accent": "#d8d0d0"
+  },
+  "grape-frost": {
+    "gradient": [
+      "#0b0b0e",
+      "#3e341a"
+    ],
+    "accent": "#605028"
+  },
+  "grasshopper": {
+    "gradient": [
+      "#534c44",
+      "#7d7268"
+    ],
+    "accent": "#b8a898"
+  },
+  "green-apple-basil-smash": {
+    "gradient": [
+      "#615e5e",
+      "#928c87"
+    ],
+    "accent": "#d8d0d0"
+  },
+  "green-goddess-smoothie": {
+    "gradient": [
+      "#323232",
+      "#534e4e"
+    ],
+    "accent": "#707070"
+  },
+  "green-swizzle": {
+    "gradient": [
+      "#656561",
+      "#979292"
+    ],
+    "accent": "#e0e0d8"
+  },
+  "green-tea-lemonade": {
+    "gradient": [
+      "#1d1916",
+      "#2a2a1f"
+    ],
+    "accent": "#403830"
+  },
+  "greenpoint": {
+    "gradient": [
+      "#0b0b07",
+      "#091216"
+    ],
+    "accent": "#102028"
+  },
+  "greyhound": {
+    "gradient": [
+      "#4f4c4c",
+      "#827d7d"
+    ],
+    "accent": "#c8c0c0"
+  },
+  "guava-cooler": {
+    "gradient": [
+      "#68533d",
+      "#97785e"
+    ],
+    "accent": "#e8b888"
+  },
+  "guava-sunrise": {
+    "gradient": [
+      "#68533d",
+      "#97785e"
+    ],
+    "accent": "#e8b888"
+  },
+  "hanky-panky": {
+    "gradient": [
+      "#706c5e",
+      "#a19c8c"
+    ],
+    "accent": "#f8f0d0"
+  },
+  "harbor-bourbon-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "harbor-brandy-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "harbor-cachaca-sour": {
+    "gradient": [
+      "#484c3d",
+      "#687263"
+    ],
+    "accent": "#a0b098"
+  },
+  "harbor-cognac-sour": {
+    "gradient": [
+      "#190e07",
+      "#2a150a"
+    ],
+    "accent": "#382010"
+  },
+  "harbor-dark-rum-sour": {
+    "gradient": [
+      "#0e0704",
+      "#342415"
+    ],
+    "accent": "#201008"
+  },
+  "harbor-gin-sour": {
+    "gradient": [
+      "#0b0e0b",
+      "#151515"
+    ],
+    "accent": "#182018"
+  },
+  "harbor-gold-rum-sour": {
+    "gradient": [
+      "#0b0b0b",
+      "#1f1515"
+    ],
+    "accent": "#181818"
+  },
+  "harbor-irish-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "harbor-mezcal-sour": {
+    "gradient": [
+      "#0e0b07",
+      "#230900"
+    ],
+    "accent": "#401000"
+  },
+  "harbor-pisco-sour": {
+    "gradient": [
+      "#32362f",
+      "#495349"
+    ],
+    "accent": "#708070"
+  },
+  "harbor-reposado-tequila-sour": {
+    "gradient": [
+      "#3a1600",
+      "#581f00"
+    ],
+    "accent": "#803000"
+  },
+  "harbor-rye-whiskey-sour": {
+    "gradient": [
+      "#0e0b0e",
+      "#120d12"
+    ],
+    "accent": "#201820"
+  },
+  "harbor-scotch-whisky-sour": {
+    "gradient": [
+      "#2f2820",
+      "#49392f"
+    ],
+    "accent": "#685848"
+  },
+  "harbor-tequila-sour": {
+    "gradient": [
+      "#120e0b",
+      "#6d6353"
+    ],
+    "accent": "#282018"
+  },
+  "harbor-vodka-sour": {
+    "gradient": [
+      "#6c6c6c",
+      "#9c9ca1"
+    ],
+    "accent": "#f0f0f8"
+  },
+  "harbor-white-rum-sour": {
+    "gradient": [
+      "#6c6c6c",
+      "#9c9ca1"
+    ],
+    "accent": "#f0f0f8"
+  },
+  "harvard": {
+    "gradient": [
+      "#706c5e",
+      "#a19c8c"
+    ],
+    "accent": "#f8f0d0"
+  },
+  "hemingway-daiquiri": {
+    "gradient": [
+      "#686868",
+      "#97979c"
+    ],
+    "accent": "#e8e8f0"
+  },
+  "hibiscus-iced-tea": {
+    "gradient": [
+      "#070b0e",
+      "#090d12"
+    ],
+    "accent": "#101820"
+  },
+  "hibiscus-lime-spritz": {
+    "gradient": [
+      "#685a4c",
+      "#9c8772"
+    ],
+    "accent": "#f0d0b0"
+  },
+  "honey-citrus-punch": {
+    "gradient": [
+      "#5e5e61",
+      "#8c8c8c"
+    ],
+    "accent": "#d8d8d8"
+  },
+  "honey-peach-iced-tea": {
+    "gradient": [
+      "#706153",
+      "#a18c7d"
+    ],
+    "accent": "#f8d8b8"
+  },
+  "horsefeather": {
+    "gradient": [
+      "#190700",
+      "#2f1000"
+    ],
+    "accent": "#481800"
+  },
+  "hot-buttered-rum": {
+    "gradient": [
+      "#3a1d04",
+      "#7d581f"
+    ],
+    "accent": "#c08830"
+  },
+  "hot-toddy": {
+    "gradient": [
+      "#0b0b0b",
+      "#151515"
+    ],
+    "accent": "#181818"
+  },
+  "hotel-nacional-special": {
+    "gradient": [
+      "#120e07",
+      "#1f150a"
+    ],
+    "accent": "#282010"
+  },
+  "hugo-spritz": {
+    "gradient": [
+      "#656565",
+      "#979797"
+    ],
+    "accent": "#e8e8e8"
+  },
+  "hunch-punch": {
+    "gradient": [
+      "#4c0000",
+      "#720000"
+    ],
+    "accent": "#a80000"
+  },
+  "hurricane": {
+    "gradient": [
+      "#160b07",
+      "#24100a"
+    ],
+    "accent": "#381810"
+  },
+  "iced-caramel-latte": {
+    "gradient": [
+      "#2f2f2b",
+      "#49493e"
+    ],
+    "accent": "#686860"
+  },
+  "iced-hibiscus-rose": {
+    "gradient": [
+      "#070b0e",
+      "#090d12"
+    ],
+    "accent": "#101820"
+  },
+  "iced-matcha-latte": {
+    "gradient": [
+      "#615e5a",
+      "#97928c"
+    ],
+    "accent": "#e8e0d8"
+  },
+  "pineapple-lemonade": {
+    "gradient": [
+      "#0e0707",
+      "#120d0d"
+    ],
+    "accent": "#201818"
+  },
+  "white-russian": {
+    "gradient": [
+      "#160704",
+      "#1a0904"
+    ],
+    "accent": "#301008"
+  }
+}

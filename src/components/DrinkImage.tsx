@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Image, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { resolveDrinkImage } from '../../assets/images/drinks';
-import { gradFor, GLASS_BORDER, RAD } from '../utils/theme';
+import { heroGradFor, GLASS_BORDER, RAD } from '../utils/theme';
 
 export type DrinkImageSize = 'sm' | 'md' | 'lg' | 'xl' | 'hero';
 
@@ -24,18 +24,11 @@ const SIZE_MAP: Record<DrinkImageSize, number> = {
   hero: 260,
 };
 
-const EMOJI_SCALE: Record<DrinkImageSize, number> = {
-  sm: 0.55,
-  md: 0.55,
-  lg: 0.55,
-  xl: 0.55,
-  hero: 0.5,
-};
+const IMAGE_INSET = 10;
 
 /**
- * Renders a drink image using the offline bundled PNG registered for the
- * given slug. When no PNG is registered, falls back to a premium gradient
- * placeholder stamped with the drink's emoji.
+ * Bundled drink art with `resizeMode="contain"` when a photo exists; otherwise
+ * shows `emoji` on the category gradient (no misleading duplicate stock photo).
  */
 export function DrinkImage({
   slug,
@@ -47,8 +40,17 @@ export function DrinkImage({
   showShine = true,
 }: Props) {
   const dim = SIZE_MAP[size];
-  const grad = useMemo(() => gradFor(category), [category]);
-  const source = useMemo(() => resolveDrinkImage(slug), [slug]);
+  const grad = useMemo(() => heroGradFor(slug, category), [slug, category]);
+  const resolved = useMemo(() => resolveDrinkImage(slug), [slug]);
+  const [decodeFailed, setDecodeFailed] = useState(false);
+
+  useEffect(() => {
+    setDecodeFailed(false);
+  }, [slug]);
+
+  const showPhoto = resolved != null && !decodeFailed;
+  const glyph = (emoji && String(emoji).trim()) || '🍹';
+  const emojiFont = Math.max(22, Math.round(dim * 0.38));
 
   const r = radius ?? (size === 'sm' ? RAD.md : size === 'hero' ? RAD.xxl : RAD.lg);
 
@@ -60,25 +62,35 @@ export function DrinkImage({
         end={{ x: 1, y: 1 }}
         style={[StyleSheet.absoluteFill, { borderRadius: r }]}
       />
-      {source ? (
-        <Image
-          source={source}
-          style={[StyleSheet.absoluteFill, { borderRadius: r }]}
-          resizeMode="cover"
-        />
-      ) : (
-        <View style={[StyleSheet.absoluteFill, styles.center]}>
-          <Text
-            style={[
-              styles.emoji,
-              { fontSize: Math.round(dim * EMOJI_SCALE[size]) },
-            ]}
-            accessibilityElementsHidden
-          >
-            {emoji}
-          </Text>
-        </View>
-      )}
+      <View
+        style={[
+          styles.imageInset,
+          { borderRadius: r, padding: IMAGE_INSET },
+        ]}
+      >
+        {showPhoto && resolved != null ? (
+          <Image
+            source={resolved}
+            style={styles.imageContain}
+            resizeMode="contain"
+            onError={() => {
+              if (__DEV__) {
+                console.warn('[MixMate] DrinkImage decode error for slug:', slug);
+              }
+              setDecodeFailed(true);
+            }}
+          />
+        ) : (
+          <Text style={[styles.emojiOnly, { fontSize: emojiFont }]}>{glyph}</Text>
+        )}
+      </View>
+      <LinearGradient
+        colors={['rgba(7,2,15,0.06)', 'rgba(7,2,15,0.12)']}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
+        style={[StyleSheet.absoluteFill, { borderRadius: r }]}
+        pointerEvents="none"
+      />
       {showShine && (
         <LinearGradient
           colors={['rgba(255,255,255,0.25)', 'rgba(255,255,255,0)']}
@@ -101,11 +113,20 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: '#1A0B2A',
   },
-  center: { alignItems: 'center', justifyContent: 'center' },
-  emoji: {
+  imageInset: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imageContain: {
+    width: '100%',
+    height: '100%',
+  },
+  emojiOnly: {
+    textAlign: 'center',
     textShadowColor: 'rgba(0,0,0,0.35)',
-    textShadowOffset: { width: 0, height: 4 },
-    textShadowRadius: 12,
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 10,
   },
   hairline: {
     ...StyleSheet.absoluteFillObject,

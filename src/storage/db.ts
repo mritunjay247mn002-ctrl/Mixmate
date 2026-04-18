@@ -13,7 +13,7 @@ import recipesSeed from '../data/recipes.json';
  * ─── Data-access layer ────────────────────────────────────────────────────
  *
  * Recipe data is read directly from the bundled JSON at startup. With only
- * ~300 entries, an in-memory store is dramatically faster and dramatically
+ * ~500 entries, an in-memory store is dramatically faster and dramatically
  * less error-prone than seeding+querying SQLite on every read. (Seed failures
  * were previously silent, which is what caused the "0 drinks" state in the
  * UI.)
@@ -128,6 +128,8 @@ export function queryDrinks(opts: DrinkQueryOptions = {}): Drink[] {
     if (q) {
       const hay =
         d.name.toLowerCase() +
+        '|' + d.slug.toLowerCase() +
+        '|' + (d.image_path ?? '').toLowerCase() +
         '|' + d.category.toLowerCase() +
         '|' + d.tags.join(',').toLowerCase() +
         '|' + d.ingredients.map((i) => i.name).join(',').toLowerCase();
@@ -219,6 +221,57 @@ function getDB(): SQLite.SQLiteDatabase | null {
 // In-memory fallbacks so the app never breaks if SQLite refuses to open.
 const memFavorites = new Map<string, number>();
 const memRecent = new Map<string, number>();
+const memPrefs = new Map<string, string>();
+
+const META_MIXOLOGIST_TITLE = 'mixologist_title';
+
+// ─── Simple string prefs (meta table) ───────────────────────────────────────
+
+export function getMixologistTitlePreference(): string | null {
+  const db = getDB();
+  if (!db) {
+    const v = memPrefs.get(META_MIXOLOGIST_TITLE);
+    return v?.trim() || null;
+  }
+  try {
+    const row = db.getFirstSync<{ value: string }>(
+      `SELECT value FROM meta WHERE key = ? LIMIT 1;`,
+      [META_MIXOLOGIST_TITLE]
+    );
+    const v = row?.value?.trim();
+    if (v) memPrefs.set(META_MIXOLOGIST_TITLE, v);
+    return v || null;
+  } catch {
+    return memPrefs.get(META_MIXOLOGIST_TITLE)?.trim() || null;
+  }
+}
+
+export function setMixologistTitlePreference(title: string | null): void {
+  const db = getDB();
+  if (!db) {
+    if (!title?.trim()) memPrefs.delete(META_MIXOLOGIST_TITLE);
+    else memPrefs.set(META_MIXOLOGIST_TITLE, title.trim());
+    return;
+  }
+  try {
+    if (!title?.trim()) {
+      db.runSync(`DELETE FROM meta WHERE key = ?;`, [META_MIXOLOGIST_TITLE]);
+      memPrefs.delete(META_MIXOLOGIST_TITLE);
+    } else {
+      const t = title.trim();
+      db.runSync(
+        `INSERT INTO meta(key, value) VALUES(?, ?)
+         ON CONFLICT(key) DO UPDATE SET value = excluded.value;`,
+        [META_MIXOLOGIST_TITLE, t]
+      );
+      memPrefs.set(META_MIXOLOGIST_TITLE, t);
+    }
+  } catch (err) {
+    console.warn('[MixMate db] setMixologistTitlePreference failed', err);
+    if (!title?.trim()) memPrefs.delete(META_MIXOLOGIST_TITLE);
+    else memPrefs.set(META_MIXOLOGIST_TITLE, title.trim());
+  }
+}
 
 // ─── Favorites API ──────────────────────────────────────────────────────────
 

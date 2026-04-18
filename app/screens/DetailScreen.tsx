@@ -21,10 +21,14 @@ import Animated, {
   withSpring,
   Easing,
   interpolate,
-  FadeInUp,
-  FadeInDown,
-  FadeInRight,
 } from 'react-native-reanimated';
+
+// NOTE: Reanimated 4.1.x built-in entering animations (FadeIn*, SlideIn*,
+// etc.) throw "String translate must be a percentage" on Android + Fabric
+// in the current dev client. All entering props here are disabled until the
+// dev client is rebuilt with a fixed Reanimated. The hero parallax, emoji
+// float, glow pulse, and gradient orbs still run because they're driven by
+// numeric-only useAnimatedStyle hooks.
 
 import { FS, SP, RAD, gradFor } from '../../src/utils/theme';
 import { getDrinkById } from '../../src/hooks/useDrinks';
@@ -88,8 +92,8 @@ export default function DetailScreen() {
   }));
 
   const heroGlowStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(emojiFloat.value, [0, 1], [0.35, 0.7]),
-    transform: [{ scale: interpolate(emojiFloat.value, [0, 1], [1, 1.15]) }],
+    opacity: interpolate(emojiFloat.value, [0, 1], [0.1, 0.18]),
+    transform: [{ scale: interpolate(emojiFloat.value, [0, 1], [1, 1.06]) }],
   }));
 
   const difficulty = drink?.difficulty ?? 'easy';
@@ -115,7 +119,7 @@ export default function DetailScreen() {
   }
 
   return (
-    <View style={styles.root}>
+    <Animated.View style={styles.root}>
       <NeonBackground colors={[grad[0], grad[1], grad[2]]} />
 
       {/* Floating nav (on top of scroll) */}
@@ -188,22 +192,13 @@ export default function DetailScreen() {
           />
 
           <View style={styles.heroInfo}>
-            <Animated.Text
-              entering={FadeInUp.duration(450).delay(100)}
-              style={styles.heroKicker}
-            >
+            <Animated.Text style={styles.heroKicker}>
               {drink.category.toUpperCase()}
             </Animated.Text>
-            <Animated.Text
-              entering={FadeInUp.duration(500).delay(180)}
-              style={styles.heroTitle}
-            >
+            <Animated.Text style={styles.heroTitle}>
               {drink.name}
             </Animated.Text>
-            <Animated.View
-              entering={FadeInUp.duration(500).delay(260)}
-              style={styles.heroPills}
-            >
+            <Animated.View style={styles.heroPills}>
               <AlcoholBadge
                 type={drink.type}
                 level={drink.alcohol_level}
@@ -224,10 +219,7 @@ export default function DetailScreen() {
         </Animated.View>
 
         {/* Stats strip */}
-        <Animated.View
-          entering={FadeInUp.duration(450).delay(200)}
-          style={styles.stats}
-        >
+        <Animated.View style={styles.stats}>
           <StatChip
             icon="time-outline"
             value={String(drink.prep_time ?? 5)}
@@ -259,10 +251,7 @@ export default function DetailScreen() {
         <Section title="Ingredients" emoji="🧪" delay={260}>
           <View style={styles.chipWrap}>
             {drink.ingredients.map((ing, i) => (
-              <Animated.View
-                key={`${ing.name}-${i}`}
-                entering={FadeInRight.duration(350).delay(280 + i * 40)}
-              >
+              <Animated.View key={`${ing.name}-${i}`}>
                 <View style={styles.ingChip}>
                   <View style={[styles.ingDot, { backgroundColor: grad[1] }]} />
                   <Text style={styles.ingTxt}>{formatIngredient(ing)}</Text>
@@ -276,11 +265,7 @@ export default function DetailScreen() {
         <Section title="How to make" emoji="📋" delay={340}>
           <View style={{ gap: 10, paddingHorizontal: SP.md }}>
             {drink.steps.map((s, i) => (
-              <Animated.View
-                key={i}
-                entering={FadeInUp.duration(400).delay(360 + i * 60)}
-                style={styles.step}
-              >
+              <Animated.View key={i} style={styles.step}>
                 <LinearGradient
                   colors={[grad[0], grad[2]]}
                   start={{ x: 0, y: 0 }}
@@ -299,10 +284,7 @@ export default function DetailScreen() {
 
         {/* Tags */}
         {drink.tags?.length ? (
-          <Animated.View
-            entering={FadeInDown.duration(420).delay(420)}
-            style={styles.tags}
-          >
+          <Animated.View style={styles.tags}>
             {drink.tags.map((t) => (
               <View key={t} style={styles.tag}>
                 <Text style={styles.tagTxt}>#{t}</Text>
@@ -332,7 +314,7 @@ export default function DetailScreen() {
           </Text>
         </Pressable>
       </Animated.ScrollView>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -368,7 +350,6 @@ function StatChip({
 function Section({
   title,
   emoji,
-  delay = 0,
   children,
 }: {
   title: string;
@@ -378,10 +359,7 @@ function Section({
 }) {
   return (
     <View style={{ marginTop: SP.md }}>
-      <Animated.View
-        entering={FadeInUp.duration(420).delay(delay)}
-        style={styles.secHead}
-      >
+      <Animated.View style={styles.secHead}>
         <Text style={styles.secEmoji}>{emoji}</Text>
         <Text style={styles.secTitle}>{title}</Text>
       </Animated.View>
@@ -444,7 +422,7 @@ const styles = StyleSheet.create({
     width: 220,
     height: 220,
     borderRadius: 110,
-    backgroundColor: 'rgba(255,255,255,0.25)',
+    backgroundColor: 'rgba(255,255,255,0.08)',
   },
   heroEmojiWrap: {
     position: 'absolute',
